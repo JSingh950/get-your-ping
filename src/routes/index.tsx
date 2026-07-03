@@ -1,24 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Starfield } from "@/components/Starfield";
+import { Nav } from "@/components/Nav";
+import { Hero } from "@/components/Hero";
+import { Features } from "@/components/Features";
+import { Teams } from "@/components/Teams";
+import { Signup } from "@/components/Signup";
+import { About } from "@/components/About";
+import { Footer } from "@/components/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "ping! — the future of networking" },
+      { name: "description", content: "A smart NFC ring and app that turn every handshake into a living, visual network. Instant share, track connections, all-in-one." },
+      { property: "og:title", content: "ping! — the future of networking" },
+      { property: "og:description", content: "A smart NFC ring and app that turn every handshake into a living, visual network." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <Starfield count={80} />
+      <Nav />
+      <div className="relative z-10">
+        <Hero />
+        <Features />
+        <Teams />
+        <Signup />
+        <About />
+        <Footer />
+      </div>
+    </main>
   );
 }
