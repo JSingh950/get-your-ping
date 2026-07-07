@@ -1,5 +1,3 @@
-import { PartnerLogoGrid } from "./PartnerLogos";
-
 export function Hero() {
   return (
     <section id="ring" className="relative min-h-screen overflow-hidden px-4 pb-16 pt-36 md:pt-44">
@@ -57,19 +55,6 @@ export function Hero() {
               aria-label="Looping Ping network diagram"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_54%,rgba(0,0,0,0.72))]" />
-          </div>
-
-          <div className="absolute bottom-6 left-5 right-5 rounded-[32px] border border-white/10 bg-black/75 p-5 shadow-2xl backdrop-blur md:left-8 md:right-8">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-              <span className="text-sm font-bold">Ping connection graph</span>
-              <span className="rounded-full bg-mint px-3 py-1 text-xs font-black text-black">
-                Live sync
-              </span>
-            </div>
-            <p className="mb-4 text-sm leading-6 text-white/60">
-              The people you meet flow into your workspace, inbox, notes, and calendar.
-            </p>
-            <PartnerLogoGrid compact />
           </div>
         </div>
       </div>
