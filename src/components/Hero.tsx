@@ -1,4 +1,22 @@
+import { useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
+
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const toggleAudio = () => {
+    const video = videoRef.current;
+    const nextMuted = !isMuted;
+
+    if (video) {
+      video.muted = nextMuted;
+      void video.play();
+    }
+
+    setIsMuted(nextMuted);
+  };
+
   return (
     <section id="ring" className="relative min-h-screen overflow-hidden px-4 pb-16 pt-36 md:pt-44">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(89,255,183,0.22),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(0,0,0,0)_48%)]" />
@@ -45,16 +63,25 @@ export function Hero() {
 
           <div className="absolute inset-x-5 top-8 overflow-hidden rounded-[36px] border border-white/10 bg-black shadow-[0_44px_120px_rgba(0,0,0,0.75),0_0_90px_rgba(89,255,183,0.18)] md:inset-x-8">
             <video
+              ref={videoRef}
               className="aspect-[4/5] w-full object-cover md:aspect-[5/6]"
               src="/ping-diagram-loop.mp4"
               autoPlay
-              muted
+              muted={isMuted}
               loop
               playsInline
               preload="metadata"
               aria-label="Looping Ping network diagram"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_54%,rgba(0,0,0,0.72))]" />
+            <button
+              type="button"
+              onClick={toggleAudio}
+              className="absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-black/65 text-white shadow-2xl backdrop-blur transition-colors hover:bg-black/85 focus:outline-none focus:ring-2 focus:ring-mint focus:ring-offset-2 focus:ring-offset-black"
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+            </button>
           </div>
         </div>
       </div>
