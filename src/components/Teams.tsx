@@ -1,3 +1,5 @@
+import { PartnerLogoGrid } from "./PartnerLogos";
+
 const items = [
   {
     title: "Onboard your team",
@@ -11,16 +13,6 @@ const items = [
     title: "Integrate any tool",
     body: "Push the people you meet straight into the systems your team lives in. Connect once and the context flows where the work already happens.",
   },
-];
-
-const integrations = [
-  "Salesforce",
-  "HubSpot",
-  "Notion",
-  "Granola",
-  "Gmail",
-  "Outlook",
-  "Google Calendar",
 ];
 
 export function Teams() {
@@ -93,15 +85,8 @@ export function Teams() {
         <p className="mt-16 text-center text-xs font-bold uppercase tracking-[0.25em] text-white/50">
           Integrates with
         </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-          {integrations.map((name) => (
-            <div key={name} className="flex flex-col items-center gap-2">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.05] text-lg font-bold">
-                {name[0]}
-              </div>
-              <span className="text-xs text-white/50">{name}</span>
-            </div>
-          ))}
+        <div className="mt-8">
+          <PartnerLogoGrid />
         </div>
 
         <div className="mt-12 flex justify-center">

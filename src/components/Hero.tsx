@@ -1,3 +1,5 @@
+import { PartnerLogoGrid } from "./PartnerLogos";
+
 export function Hero() {
   return (
     <section id="ring" className="relative min-h-screen overflow-hidden px-4 pb-16 pt-36 md:pt-44">
@@ -38,31 +40,36 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="relative min-h-[440px] lg:min-h-[620px]">
+        <div className="relative min-h-[520px] lg:min-h-[660px]">
           <div className="absolute inset-0 rounded-[48px] bg-[linear-gradient(135deg,rgba(255,255,255,0.16),rgba(255,255,255,0.02))] ring-1 ring-white/10" />
           <div className="absolute inset-x-10 top-10 h-32 rounded-full bg-mint/20 blur-3xl" />
-          <div className="absolute left-1/2 top-10 h-[540px] w-[540px] -translate-x-1/2 rounded-full border border-white/10 bg-[radial-gradient(circle,rgba(255,255,255,0.09),rgba(255,255,255,0)_62%)]" />
-          <div className="absolute left-1/2 top-20 h-[360px] w-[250px] -translate-x-1/2 rotate-[-18deg] rounded-[48%] border-[26px] border-black bg-gradient-to-br from-white/20 via-zinc-900 to-black shadow-[inset_0_0_40px_rgba(255,255,255,0.12),0_44px_120px_rgba(0,0,0,0.75),0_0_90px_rgba(89,255,183,0.18)]">
-            <div className="ml-10 mt-10 h-3 w-3 rounded-full bg-white/55" />
-            <div className="absolute -right-8 top-28 h-28 w-28 rounded-full bg-mint/25 blur-2xl" />
+          <div className="absolute left-1/2 top-8 h-[520px] w-[520px] -translate-x-1/2 rounded-full border border-white/10 bg-[radial-gradient(circle,rgba(255,255,255,0.09),rgba(255,255,255,0)_62%)]" />
+
+          <div className="absolute inset-x-5 top-8 overflow-hidden rounded-[36px] border border-white/10 bg-black shadow-[0_44px_120px_rgba(0,0,0,0.75),0_0_90px_rgba(89,255,183,0.18)] md:inset-x-8">
+            <video
+              className="aspect-[4/5] w-full object-cover md:aspect-[5/6]"
+              src="/ping-diagram-loop.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="Looping Ping network diagram"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_54%,rgba(0,0,0,0.72))]" />
           </div>
-          <div className="absolute bottom-8 left-8 right-8 rounded-[32px] border border-white/10 bg-black/70 p-5 shadow-2xl backdrop-blur">
-            <div className="mb-4 flex items-center justify-between">
-              <span className="text-sm font-bold">Ping profile</span>
+
+          <div className="absolute bottom-6 left-5 right-5 rounded-[32px] border border-white/10 bg-black/75 p-5 shadow-2xl backdrop-blur md:left-8 md:right-8">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+              <span className="text-sm font-bold">Ping connection graph</span>
               <span className="rounded-full bg-mint px-3 py-1 text-xs font-black text-black">
-                NFC ready
+                Live sync
               </span>
             </div>
-            <div className="grid gap-3 text-sm text-white/70">
-              <div className="flex items-center justify-between rounded-2xl bg-white/[0.08] px-4 py-3">
-                <span>Tap to share</span>
-                <span className="text-mint">contact + socials</span>
-              </div>
-              <div className="flex items-center justify-between rounded-2xl bg-white/[0.08] px-4 py-3">
-                <span>Network map</span>
-                <span className="text-mint">living universe</span>
-              </div>
-            </div>
+            <p className="mb-4 text-sm leading-6 text-white/60">
+              The people you meet flow into your workspace, inbox, notes, and calendar.
+            </p>
+            <PartnerLogoGrid compact />
           </div>
         </div>
       </div>
