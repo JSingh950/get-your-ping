@@ -1,30 +1,39 @@
 export function Nav() {
-  const links = ["ring", "teams", "about", "news"];
+  const links = [
+    { label: "Ring", href: "#ring" },
+    { label: "Teams", href: "#teams" },
+    { label: "Why now", href: "#why-now" },
+    { label: "Invest", href: "#invest" },
+  ];
+
   return (
-    <header className="fixed top-4 left-0 right-0 z-50 px-4">
-      <div className="mx-auto flex max-w-6xl items-center justify-between">
-        <div className="w-24" />
-        <nav className="flex items-center gap-1 rounded-full border border-border/60 bg-black/70 px-2 py-2 backdrop-blur-md">
-          {links.slice(0, 2).map((l) => (
-            <a key={l} href={`#${l}`} className="rounded-full px-5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
-              {l}
-            </a>
-          ))}
-          <a href="#" className="px-3 text-2xl font-black tracking-tight">
+    <header className="fixed left-0 right-0 top-0 z-50">
+      <div className="border-b border-white/10 bg-mint px-4 py-2 text-center text-xs font-semibold text-black md:text-sm">
+        Pre-seed round open · $8M cap · $25,000 minimum check
+      </div>
+      <div className="border-b border-white/10 bg-black/80 px-4 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between">
+          <a href="#" className="text-2xl font-black tracking-tight">
             ping<span className="text-mint">!</span>
           </a>
-          {links.slice(2).map((l) => (
-            <a key={l} href={`#${l}`} className="rounded-full px-5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground">
-              {l}
-            </a>
-          ))}
-        </nav>
-        <a
-          href="#signin"
-          className="rounded-full bg-mint px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-[0_0_30px_-5px_var(--mint)] transition-transform hover:scale-105"
-        >
-          sign in
-        </a>
+          <nav className="hidden items-center gap-8 md:flex">
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <a
+            href="#invest"
+            className="rounded-full bg-white px-5 py-2.5 text-sm font-bold text-black transition-transform hover:scale-105"
+          >
+            Contact now
+          </a>
+        </div>
       </div>
     </header>
   );

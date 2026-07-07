@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Starfield } from "@/components/Starfield";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Features } from "@/components/Features";
@@ -12,9 +11,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "ping! — the future of networking" },
-      { name: "description", content: "A smart NFC ring and app that turn every handshake into a living, visual network. Instant share, track connections, all-in-one." },
+      {
+        name: "description",
+        content:
+          "A smart NFC ring and app that turn every handshake into a living, visual network. Instant share, track connections, all-in-one.",
+      },
       { property: "og:title", content: "ping! — the future of networking" },
-      { property: "og:description", content: "A smart NFC ring and app that turn every handshake into a living, visual network." },
+      {
+        property: "og:description",
+        content:
+          "A smart NFC ring and app that turn every handshake into a living, visual network.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -25,14 +32,13 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
-      <Starfield count={80} />
       <Nav />
       <div className="relative z-10">
         <Hero />
         <Features />
         <Teams />
-        <Signup />
         <About />
+        <Signup />
         <Footer />
       </div>
     </main>

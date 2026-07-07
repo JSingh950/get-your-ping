@@ -32,10 +32,10 @@
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 0.75rem;
   --background: oklch(0 0 0);
   --foreground: oklch(0.98 0 0);
-  --card: oklch(0.14 0.01 160);
+  --card: oklch(0.12 0.01 160);
   --card-foreground: oklch(0.98 0 0);
   --primary: oklch(0.86 0.19 158);
   --primary-foreground: oklch(0.15 0.03 160);
@@ -116,4 +116,5 @@
   * { border-color: var(--color-border); }
   html, body { background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
   body { font-feature-settings: "ss01","cv11"; }
+  ::selection { background: var(--mint); color: black; }
 }

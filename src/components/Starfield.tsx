@@ -26,9 +26,7 @@ export function Starfield({ count = 60 }: { count?: number }) {
             left: `${s.left}%`,
             width: `${s.size}px`,
             height: `${s.size}px`,
-            background: s.greenish
-              ? "color-mix(in oklab, var(--mint) 80%, white)"
-              : "white",
+            background: s.greenish ? "color-mix(in oklab, var(--mint) 80%, white)" : "white",
             animationDelay: `${s.delay}s`,
             animationDuration: `${s.duration}s`,
           }}
