@@ -52,7 +52,6 @@ export function Hero() {
             </a>
           </div>
           <p className="mt-4 text-xs uppercase tracking-[0.22em] text-white/50">
-            Limited first batch · No ring required to start
           </p>
         </div>
 
